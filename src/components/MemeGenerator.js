@@ -6,19 +6,29 @@ class MemeGenerator extends React.Component {
     topText: "",
     bottomText: "",
     randomImage: "http://i.imgflip.com/1bij.jpg", 
-    allMemeImages: []
+    allMemeImages: [],
+    error: ''
   }
 
   componentDidMount(){
     this.getImages();
   }
 
-  getImages(){
+  getImages() {
     fetch('https://api.imgflip.com/get_memes')
       .then(response => response.json())
-      .then(response => this.setState({
-        allMemeImages: response.data.memes
-      }))
+      .then(response => {
+        if (response.success !== true) {
+          this.setState({ error: "API Error" })
+          return
+        }
+        this.setState({
+          allMemeImages: response.data.memes
+        })
+      })
+      .catch(err => {
+        this.setState({ error: 'API ERROR'})
+      })
   }
 
   handleChange = (event) => {
@@ -30,16 +40,17 @@ class MemeGenerator extends React.Component {
 
   generate = (event) => {
     event.preventDefault()
-    const randNum = Math.floor(Math.random() * 100)
-    console.log(this.state.allMemeImages[randNum])
+    const randNum = Math.floor(Math.random() * this.state.allMemeImages.length)
     this.setState({randomImage: this.state.allMemeImages[randNum].url})
   }
 
   render () {
+    if (this.state.error) {
+      return <h1>{this.state.error}</h1>
+    }
     return (
       <div>
         <form className="meme-form">
-            
               <input
                 name="topText"
                 placeholder="top text"
