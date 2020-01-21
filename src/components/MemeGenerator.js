@@ -28,26 +28,43 @@ class MemeGenerator extends React.Component {
     })
   }
 
+  generate = (event) => {
+    event.preventDefault()
+    const randNum = Math.floor(Math.random() * 100)
+    console.log(this.state.allMemeImages[randNum])
+    this.setState({randomImage: this.state.allMemeImages[randNum].url})
+  }
+
   render () {
     return (
-      <form className="meme-form">
-          
-            <input
-              name="topText"
-              placeholder="top text"
-              value={this.state.topText}
-              onChange={this.handleChange}
-            />
-
-            <input
-              name="bottomText"
-              placeholder="bottomText"
-              value={this.state.bottomText}
-              onChange={this.handleChange}
-            />
+      <div>
+        <form className="meme-form">
             
-          <button>Gen</button>
-      </form>
+              <input
+                name="topText"
+                placeholder="top text"
+                value={this.state.topText}
+                onChange={this.handleChange}
+              />
+
+              <input
+                name="bottomText"
+                placeholder="bottomText"
+                value={this.state.bottomText}
+                onChange={this.handleChange}
+              />
+              
+            <button onClick={this.generate}>Gen</button>
+
+            
+        </form>
+
+        <div className="meme">
+          <img src={this.state.randomImage} alt="" />
+          <h2 className="top">{this.state.topText}</h2>
+          <h2 className="bottom">{this.state.bottomText}</h2>
+        </div>
+      </div>
     )
   }
 
