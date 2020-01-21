@@ -19,7 +19,7 @@ class MemeGenerator extends React.Component {
       .then(response => response.json())
       .then(response => {
         if (response.success !== true) {
-          this.setState({ error: "API Error" })
+          this.setState({ error: response.error_message })
           return
         }
         this.setState({
