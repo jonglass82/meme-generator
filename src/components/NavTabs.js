@@ -6,6 +6,7 @@ import Nav from 'react-bootstrap/Nav'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import MemeGenerator from './MemeGenerator'
 import Header from './Header'
+import Gallery from './Gallery'
 
 
 
@@ -29,15 +30,11 @@ function NavTab() {
                 <Col sm={9}>
                     <Tab.Content>
                     <Tab.Pane eventKey="first">
-                        <div>
-                            <Header />
-                        </div>
-                        <div>
-                            <MemeGenerator />
-                        </div>
+                        <Header />
+                        <MemeGenerator />
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
-                        <p>THIS IS A TEST</p>
+                        <Gallery />
                     </Tab.Pane>
                     </Tab.Content>
                 </Col>

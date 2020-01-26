@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-class MemeGenerator extends React.Component {
+class Gallery extends React.Component {
 	state = {
 		topText: "",
 		bottomText: "",
@@ -79,36 +79,27 @@ class MemeGenerator extends React.Component {
 			return <h1>{this.state.error}</h1>;
 		}
 		return (
-			<div>
-				<form className="meme-form">
-					<input
-						name="topText"
-						placeholder="top text"
-						value={this.state.topText}
-						onChange={this.handleChange}
-					/>
+			
 
-					<input
-						name="bottomText"
-						placeholder="bottomText"
-						value={this.state.bottomText}
-						onChange={this.handleChange}
-					/>
-
-					<button onClick={this.generate}>New Meme</button>
-					<button onClick={this.save}>Save</button>
-				</form>
-
-				<div className="meme">
-					<img src={this.state.randomImage} alt="" />
-					<h2 className="top">{this.state.topText}</h2>
-					<h2 className="bottom">{this.state.bottomText}</h2>
-				</div>
-
-
-			</div>
+        <div className="myMemes">
+          <h1>My Gallery ({this.state.mySavedMemes.length})</h1>
+            <div className="grid-container">
+                  {this.state.mySavedMemes.map((meme) => {
+                    return <div className="meme">
+                      <img src={meme.memeUrl} alt="" />
+                      <h2 className="top">{meme.topText}</h2>
+                      <h2 className="bottom">{meme.bottomText}</h2>
+                      <a href="">Edit</a>
+                    </div>
+                  })
+                }
+            </div>
+        </div>
 		);
 	}
 }
 
-export default MemeGenerator;
+
+
+export default Gallery
+
