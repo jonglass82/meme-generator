@@ -3,7 +3,10 @@ import Row from 'react-bootstrap/Row'
 import Tab from 'react-bootstrap/Tab'
 import Col from 'react-bootstrap/Col'
 import Nav from 'react-bootstrap/Nav'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import MemeGenerator from './MemeGenerator'
+import Header from './Header'
+
 
 
 function NavTab() {
@@ -13,17 +16,25 @@ function NavTab() {
                 <Col sm={3}>
                     <Nav variant="pills" className="flex-column">
                     <Nav.Item>
-                        <Nav.Link eventKey="first">Tab 1</Nav.Link>
+                        <Nav.Link eventKey="first">Home</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link eventKey="second">Tab 2</Nav.Link>
+                        <Nav.Link eventKey="second">Gallery</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link eventKey="third">Edit</Nav.Link>
                     </Nav.Item>
                     </Nav>
                 </Col>
                 <Col sm={9}>
                     <Tab.Content>
                     <Tab.Pane eventKey="first">
-                        <p>THIS IS A TEST</p>
+                        <div>
+                            <Header />
+                        </div>
+                        <div>
+                            <MemeGenerator />
+                        </div>
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
                         <p>THIS IS A TEST</p>
