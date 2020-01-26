@@ -6,12 +6,13 @@ class MemeGenerator extends React.Component {
 		topText: "",
 		bottomText: "",
 		randomImage: "http://i.imgflip.com/1bij.jpg",
-		allMemeImages: [],
+		mySavedMemes: [],
 		error: ""
 	};
 
 	componentDidMount() {
 		this.getImages();
+    this.getMyMemes();
 	}
 
 	getImages() {
@@ -30,6 +31,15 @@ class MemeGenerator extends React.Component {
 				this.setState({ error: "API ERROR" });
 			});
 	}
+
+  getMyMemes = () => {
+    axios.get("http://localhost:3001/api/memes").then(response => {
+      const myMemes = response.data
+      this.setState({
+        mySavedMemes: myMemes
+      })
+    })
+  }
 
 	handleChange = event => {
 		const { name, value } = event.target;
@@ -94,6 +104,22 @@ class MemeGenerator extends React.Component {
 					<h2 className="top">{this.state.topText}</h2>
 					<h2 className="bottom">{this.state.bottomText}</h2>
 				</div>
+
+        <div className="myMemes">
+          <h1>My saved memes ({this.state.mySavedMemes.length})</h1>
+            <div className="grid-container">
+                  {this.state.mySavedMemes.map((meme) => {
+                    return <div className="meme">
+                      <img src={meme.memeUrl} alt="" />
+                      <h2 className="top">{meme.topText}</h2>
+                      <h2 className="bottom">{meme.bottomText}</h2>
+                      <a href="">Edit</a>
+                    </div>
+                  })
+                }
+            </div>
+        </div>
+
 			</div>
 		);
 	}
