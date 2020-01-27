@@ -12,7 +12,6 @@ class MemeGenerator extends React.Component {
 
 	componentDidMount() {
 		this.getImages();
-    this.getMyMemes();
 	}
 
 	getImages() {
@@ -31,15 +30,6 @@ class MemeGenerator extends React.Component {
 				this.setState({ error: "API ERROR" });
 			});
 	}
-
-  getMyMemes = () => {
-    axios.get("http://localhost:3001/api/memes").then(response => {
-      const myMemes = response.data
-      this.setState({
-        mySavedMemes: myMemes
-      })
-    })
-  }
 
 	handleChange = event => {
 		const { name, value } = event.target;
