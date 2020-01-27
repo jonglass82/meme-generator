@@ -4,12 +4,16 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import NavTabs from "./components/NavTabs";
+import LandingPage from "./components/LandingPage";
+import MemeEdit from "./components/MemeEdit";
 import * as serviceWorker from "./serviceWorker";
 
 const RoutedApp = (
 	<Router>
-		<Route exact path="/" component={App} />
-		<Route exact path="/index" component={NavTabs} />
+		<Route exact path="/" component={LandingPage} />
+		<Route exact path="/new" component={App} />
+		<Route exact path="/memes" component={NavTabs} />
+		<Route path="/memes/edit" component={MemeEdit} />
 	</Router>
 );
 
