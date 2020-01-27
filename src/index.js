@@ -3,11 +3,13 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./index.css";
 import App from "./App";
+import NavTabs from "./components/NavTabs";
 import * as serviceWorker from "./serviceWorker";
 
 const RoutedApp = (
 	<Router>
 		<Route exact path="/" component={App} />
+		<Route exact path="/index" component={NavTabs} />
 	</Router>
 );
 

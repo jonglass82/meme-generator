@@ -124,3 +124,21 @@ header > p {
   padding: 20px;
   margin: auto;
 }
+
+.myMemes h1 {
+	text-align: center;
+}
+
+.headerImage {
+	margin-bottom: 4%;
+}
+
+.headerImage header p {
+	margin-top: 1%;
+	color: #000000;
+	opacity: 30%;
+}
+
+.memeGen {
+	margin-top: 6%;
+}
