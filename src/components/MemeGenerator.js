@@ -79,7 +79,7 @@ class MemeGenerator extends React.Component {
 			return <h1>{this.state.error}</h1>;
 		}
 		return (
-			<div>
+			<div className="memeGen">
 				<form className="meme-form">
 					<input
 						name="topText"
@@ -105,6 +105,20 @@ class MemeGenerator extends React.Component {
 					<h2 className="bottom">{this.state.bottomText}</h2>
 				</div>
 
+        <div className="myMemes">
+          <h1>My saved memes ({this.state.mySavedMemes.length})</h1>
+            <div className="grid-container">
+                  {this.state.mySavedMemes.map((meme) => {
+                    return <div className="meme">
+                      <img src={meme.memeUrl} alt="" />
+                      <h2 className="top">{meme.topText}</h2>
+                      <h2 className="bottom">{meme.bottomText}</h2>
+                      <a href="">Edit</a>
+                    </div>
+                  })
+                }
+            </div>
+        </div>
 
 			</div>
 		);

@@ -1,5 +1,7 @@
-import React from "react";
-import axios from "axios";
+import React from "react"
+import axios from "axios"
+
+
 
 class Gallery extends React.Component {
 	state = {

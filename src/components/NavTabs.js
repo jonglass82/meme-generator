@@ -34,6 +34,7 @@ function NavTab() {
                         <MemeGenerator />
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
+                        <Header />
                         <Gallery />
                     </Tab.Pane>
                     </Tab.Content>
