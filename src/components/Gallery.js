@@ -13,7 +13,7 @@ class Gallery extends React.Component {
 	}
 
 	getMyMemes = () => {
-		axios.get("http://localhost:3001/api/memes").then(response => {
+		axios.get(`${process.env.REACT_APP_API}/api/memes`).then(response => {
 			const myMemes = response.data;
 			this.setState({
 				mySavedMemes: myMemes
