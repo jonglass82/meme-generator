@@ -53,7 +53,7 @@ class MemeGenerator extends React.Component {
 		};
 		console.log(params);
 		axios
-			.post("http://localhost:3001/api/memes", params)
+			.post(`${process.env.REACT_APP_API}/api/memes`, params)
 			.then(response => {
 				if (response.status === 200) {
 					window.alert("Meme saved to database");
