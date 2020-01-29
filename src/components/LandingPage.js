@@ -1,11 +1,9 @@
 import React from "react";
-import Header from "./Header";
 
 class LandingPage extends React.Component {
 	render() {
 		return (
-			<div>
-				<Header />
+			<div id="landing-page" className="container">
 				<img
 					src={process.env.PUBLIC_URL + "AcmeMeme.png"}
 					alt=""
