@@ -28,7 +28,7 @@ class Gallery extends React.Component {
 		}
 		return (
 			<div className="myMemes">
-				<h1>My Gallery ({this.state.mySavedMemes.length})</h1>
+				<h3 className="gallery-header">My Gallery ({this.state.mySavedMemes.length})</h3>
 				<div className="grid-container">
 					{this.state.mySavedMemes.map((meme, index) => {
 						console.log(meme._id);

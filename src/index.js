@@ -4,22 +4,24 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import NavTabs from "./components/NavTabs";
+import Gallery from "./components/Gallery";
+import Header from "./components/Header";
 import LandingPage from "./components/LandingPage";
+import MemeGenerator from "./components/MemeGenerator";
 import MemeEdit from "./components/MemeEdit";
 import * as serviceWorker from "./serviceWorker";
 
 const RoutedApp = (
 	<Router>
+    <Header />
+    <NavTabs />
 		<Route exact path="/" component={LandingPage} />
-		<Route exact path="/new" component={App} />
-		<Route exact path="/memes" component={NavTabs} />
+		<Route exact path="/new" component={MemeGenerator} />
+		<Route exact path="/memes" component={Gallery} />
 		<Route path="/memes/edit" component={MemeEdit} />
 	</Router>
 );
 
 ReactDOM.render(RoutedApp, document.getElementById("root"));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();

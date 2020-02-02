@@ -142,3 +142,29 @@ header > p {
 .memeGen {
 	margin-top: 6%;
 }
+.Nav{
+	background-color: red;
+}
+
+.justify-content-center{
+	font-size: 18pt;
+	padding: 30px;
+}
+
+.custom-link{
+	color: #2a0845;
+}
+
+.custom-link:hover{
+	color: #6441a5;
+}
+
+.gallery-header{
+	align-content: center;
+	text-align: center;
+	padding: 20px;
+}
+
+#landing-page{
+	text-align: center;
+}
