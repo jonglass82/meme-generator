@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 
+
 class MemeGenerator extends React.Component {
 	state = {
 		topText: "",
@@ -91,8 +92,8 @@ class MemeGenerator extends React.Component {
 
 				<div className="meme">
 					<img src={this.state.randomImage} alt="" />
-					<h2 className="top">{this.state.topText}</h2>
-					<h2 className="bottom">{this.state.bottomText}</h2>
+					<h1 className="top">{this.state.topText}</h1>
+					<h1 className="bottom">{this.state.bottomText}</h1>
 				</div>
 			</div>
 		);

@@ -45,24 +45,26 @@ header > p {
 
 .meme > img {
 	width: 100%;
+	margin-bottom: 10%;
 }
 
-.meme > h2 {
+.meme > h1 {
 	position: absolute;
 	width: 80%;
 	text-align: center;
 	left: 50%;
 	transform: translateX(-50%);
-	margin: 15px 0;
-	padding: 0 5px;
+	margin-top: 2.5%;
+	margin-bottom: 2.5%;
 	font-family: impact, sans-serif;
-	font-size: 2em;
+	font-size: 5vw;
 	text-transform: uppercase;
 	color: white;
-	letter-spacing: 1px;
+	letter-spacing: 2%;
 	text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
 		-2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
 		2px 2px 5px #000;
+	word-wrap: break-word;
 }
 
 .meme > .bottom {
