@@ -2,40 +2,77 @@ import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const MemeEdit = props => {
-	const meme = props.location.meme;
-	console.log(meme);
+class MemeEdit extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			_id: props.location.meme._id,
+			topText: props.location.meme.topText,
+			bottomText: props.location.meme.bottomText,
+			memeUrl: props.location.meme.memeUrl
+		};
+	}
 
-	return (
-		<div className="memeGen">
-			<form className="meme-form">
-				<input
-					name="topText"
-					placeholder="top text"
-					value={meme.topText}
-					// onChange={this.handleChange}
-				/>
+	handleChange = event => {
+		const { name, value } = event.target;
+		this.setState({
+			[name]: value
+		});
+	};
 
-				<input
-					name="bottomText"
-					placeholder="bottomText"
-					value={meme.bottomText}
-					// onChange={this.handleChange}
-				/>
+	save = event => {
+		event.preventDefault();
+		const params = {
+			topText: this.state.topText,
+			bottomText: this.state.bottomText,
+			memeUrl: this.state.randomImage
+		};
+		const id = this.state._id;
+		console.log(params);
+		axios
+			.patch(`${process.env.REACT_APP_API}/api/memes/${id}`, params)
+			.then(response => {
+				if (response.status === 200) {
+					window.alert("Changes saved to database");
+				}
+			})
+			.catch(error => {
+				console.log(error);
+			});
+	};
 
-				<button>Save</button>
-				<Link to={{ pathname: "/memes" }}>
-					<button>Back</button>
-				</Link>
-			</form>
+	render() {
+		return (
+			<div className="memeGen">
+				<form className="meme-form">
+					<input
+						name="topText"
+						placeholder="top text"
+						value={this.state.topText}
+						onChange={this.handleChange}
+					/>
 
-			<div className="meme">
-				<img src={meme.memeUrl} alt="" />
-				<h2 className="top">{meme.topText}</h2>
-				<h2 className="bottom">{meme.bottomText}</h2>
+					<input
+						name="bottomText"
+						placeholder="bottomText"
+						value={this.state.bottomText}
+						onChange={this.handleChange}
+					/>
+
+					<button onClick={this.save}>Save</button>
+					<Link to={{ pathname: "/memes" }}>
+						<button>Back</button>
+					</Link>
+				</form>
+
+				<div className="meme">
+					<img src={this.state.memeUrl} alt="" />
+					<h2 className="top">{this.state.topText}</h2>
+					<h2 className="bottom">{this.state.bottomText}</h2>
+				</div>
 			</div>
-		</div>
-	);
-};
+		);
+	}
+}
 
 export default MemeEdit;
