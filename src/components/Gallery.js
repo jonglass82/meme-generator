@@ -35,8 +35,8 @@ class Gallery extends React.Component {
 						return (
 							<div className="meme" key={index}>
 								<img src={meme.memeUrl} alt="" />
-								<h2 className="top">{meme.topText}</h2>
-								<h2 className="bottom">{meme.bottomText}</h2>
+								<h1 className="top_gallery">{meme.topText}</h1>
+								<h1 className="bottom_gallery">{meme.bottomText}</h1>
 								<Link to={{ pathname: "/memes/edit", meme }}>Edit</Link>
 							</div>
 						);
