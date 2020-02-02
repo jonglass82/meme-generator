@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import Image from 'react-bootstrap/Image';
+import Col from 'react-bootstrap/Col';
 
 class Gallery extends React.Component {
 	state = {
@@ -33,12 +35,23 @@ class Gallery extends React.Component {
 					{this.state.mySavedMemes.map((meme, index) => {
 						console.log(meme._id);
 						return (
-							<div className="meme" key={index}>
-								<img src={meme.memeUrl} alt="" />
-								<h1 className="top_gallery">{meme.topText}</h1>
-								<h1 className="bottom_gallery">{meme.bottomText}</h1>
-								<Link to={{ pathname: "/memes/edit", meme }}>Edit</Link>
-							</div>
+							<container>
+								<row>
+									<Col>
+										<div className="meme" key={index}>
+											<img src={meme.memeUrl} alt="" thumbnail fluid />
+											<div className="top_gallery">
+												<h1>{meme.topText}</h1>
+											</div>
+											<div className="bottom_gallery">
+												<h1>{meme.bottomText}</h1>
+											</div>
+											
+											<Link to={{ pathname: "/memes/edit", meme }}>Edit</Link>
+										</div>
+									</Col>
+								</row>
+							</container>
 						);
 					})}
 				</div>

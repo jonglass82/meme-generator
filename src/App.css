@@ -91,14 +91,11 @@ header p {
 }
 
 .meme .top_gallery {
-	top: 0%;
-	position: absolute;
+	
+	
 	width: 80%;
 	text-align: center;
-	left: 50%;
-	transform: translateX(-50%);
-	margin-top: 2.5%;
-	margin-bottom: 2.5%;
+
 	font-family: impact, sans-serif;
 	font-size: 3vw;
 	text-transform: uppercase;
@@ -111,14 +108,10 @@ header p {
 }
 
 .meme .bottom_gallery {
-	bottom: 15%;
-	position: absolute;
-	width: 80%;
+	
 	text-align: center;
-	left: 50%;
-	transform: translateX(-50%);
-	margin-top: 2.5%;
-	margin-bottom: 2.5%;
+	
+	
 	font-family: impact, sans-serif;
 	font-size: 3vw;
 	text-transform: uppercase;
