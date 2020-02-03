@@ -5,7 +5,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function NavTabs() {
 	return (
 <header>
-	
+	<div className="title">
+		<h1>AMG 3000</h1>
+	</div>
 	<Nav className="justify-content-center">
 
 			    <Nav.Item>
