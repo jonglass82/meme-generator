@@ -11,30 +11,8 @@ header {
 	height: 100px;
 	display: flex;
 	align-items: center;
-	background: #6441a5; /* fallback for old browsers */
-	background: -webkit-linear-gradient(
-		to right,
-		#2a0845,
-		#6441a5
-	); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(
-		to right,
-		#2a0845,
-		#6441a5
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-header > img {
-	height: 80%;
-	margin-left: 10%;
-}
-
-header > p {
-	font-family: VT323, monospace;
-	color: whitesmoke;
-	font-size: 50px;
-	margin-left: 10%;
-	display: inline;
+	background: #547CCB;
+	
 }
 
 .meme {
@@ -142,21 +120,22 @@ header > p {
 .memeGen {
 	margin-top: 6%;
 }
-.Nav{
-	background-color: red;
-}
 
-.justify-content-center{
+
+.justify-content-center {
 	font-size: 18pt;
 	padding: 30px;
+	margin-left: 66vw;
 }
-
+.navigation {
+	margin-bottom: 80%;
+}
 .custom-link{
-	color: #2a0845;
+	color: #FFFFFF;
 }
 
 .custom-link:hover{
-	color: #6441a5;
+	color: #D2D2D2;
 }
 
 .gallery-header{
