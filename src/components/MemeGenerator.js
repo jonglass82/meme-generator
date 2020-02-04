@@ -73,14 +73,14 @@ class MemeGenerator extends React.Component {
 				<form className="meme-form">
 					<input
 						name="topText"
-						placeholder="top text"
+						placeholder="Top Text"
 						value={this.state.topText}
 						onChange={this.handleChange}
 					/>
 
 					<input
 						name="bottomText"
-						placeholder="bottomText"
+						placeholder="Bottom Text"
 						value={this.state.bottomText}
 						onChange={this.handleChange}
 					/>
@@ -98,5 +98,7 @@ class MemeGenerator extends React.Component {
 		);
 	}
 }
+
+
 
 export default MemeGenerator;

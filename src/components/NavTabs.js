@@ -4,8 +4,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function NavTabs() {
 	return (
-
-		  <Nav className="justify-content-center">
+<header>
+	<div className="title">
+		<h1>AMG 3000</h1>
+	</div>
+	<Nav className="justify-content-center">
 
 			    <Nav.Item>
 			      <Nav.Link href="/" className="custom-link">Home</Nav.Link>
@@ -18,6 +21,7 @@ function NavTabs() {
 			    </Nav.Item>
 
       </Nav>
+	  </header>
 	);
 }
 

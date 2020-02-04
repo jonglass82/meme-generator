@@ -5,7 +5,6 @@ import "./index.css";
 import App from "./App";
 import NavTabs from "./components/NavTabs";
 import Gallery from "./components/Gallery";
-import Header from "./components/Header";
 import LandingPage from "./components/LandingPage";
 import MemeGenerator from "./components/MemeGenerator";
 import MemeEdit from "./components/MemeEdit";
@@ -13,7 +12,6 @@ import * as serviceWorker from "./serviceWorker";
 
 const RoutedApp = (
 	<Router>
-    <Header />
     <NavTabs />
 		<Route exact path="/" component={LandingPage} />
 		<Route exact path="/new" component={MemeGenerator} />

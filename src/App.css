@@ -11,30 +11,9 @@ header {
 	height: 100px;
 	display: flex;
 	align-items: center;
-	background: #6441a5; /* fallback for old browsers */
-	background: -webkit-linear-gradient(
-		to right,
-		#2a0845,
-		#6441a5
-	); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(
-		to right,
-		#2a0845,
-		#6441a5
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-header > img {
-	height: 80%;
-	margin-left: 10%;
-}
-
-header > p {
-	font-family: VT323, monospace;
-	color: whitesmoke;
-	font-size: 50px;
-	margin-left: 10%;
-	display: inline;
+	background: #547CCB;
+	margin-bottom: 8%;
+	
 }
 
 .meme {
@@ -56,13 +35,14 @@ header > p {
 	margin: 15px 0;
 	padding: 0 5px;
 	font-family: impact, sans-serif;
-	font-size: 2em;
+	font-size: 6vw;
 	text-transform: uppercase;
 	color: white;
 	letter-spacing: 1px;
 	text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
 		-2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
 		2px 2px 5px #000;
+	word-wrap: break-word;
 }
 
 .meme > .bottom {
@@ -87,34 +67,30 @@ header > p {
 
 .meme-form > button {
 	border: none;
-	font-family: VT323, monospace;
 	font-size: 25px;
 	letter-spacing: 1.5px;
 	color: white;
-	background: #6441a5;
+	background: #547CCB;
 }
 
 .meme-form > input::-webkit-input-placeholder {
 	/* Chrome/Opera/Safari */
-	font-family: VT323, monospace;
 	font-size: 25px;
 	text-align: cen;
+	
 }
 .meme-form > input::-moz-placeholder {
 	/* Firefox 19+ */
-	font-family: VT323, monospace;
 	font-size: 25px;
 	text-align: cen;
 }
 .meme-form > input:-ms-input-placeholder {
 	/* IE 10+ */
-	font-family: VT323, monospace;
 	font-size: 25px;
 	text-align: cen;
 }
 .meme-form > input:-moz-placeholder {
 	/* Firefox 18- */
-	font-family: VT323, monospace;
 	font-size: 25px;
 	text-align: cen;
 }
@@ -130,33 +106,33 @@ header > p {
 	text-align: center;
 }
 
-.headerImage {
-	margin-bottom: 4%;
-}
 
-.headerImage header p {
-	margin-top: 1%;
-	opacity: 30%;
-}
 
 .memeGen {
 	margin-top: 6%;
 }
-.Nav{
-	background-color: red;
-}
 
-.justify-content-center{
+.title h1 {
+	position: absolute; 
+	margin-left: 2%;
+	bottom: 90.5%;
+	color: #FFFFFF;
+	font-family: 'Sonsie One', cursive;
+}
+.justify-content-center {
 	font-size: 18pt;
+	position: absolute;
 	padding: 30px;
+	margin-left: 66vw;
+	bottom: 87.5%;
 }
 
 .custom-link{
-	color: #2a0845;
+	color: #FFFFFF;
 }
 
 .custom-link:hover{
-	color: #6441a5;
+	color: #D2D2D2;
 }
 
 .gallery-header{
